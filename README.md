@@ -40,22 +40,42 @@ Além da parte técnica, o projeto busca desenvolver uma visão de análise orie
 Base original
 
 analise_funcionarios.xlsx
-Arquivo utilizado como entrada do projeto. Essa é a base inicial dos colaboradores, que foi importada para o Python para realização das etapas de exploração e tratamento.
+
+Arquivo utilizado como entrada do projeto.
+
+Contém a base inicial dos colaboradores.
+
+Foi importado para o Python para as etapas de exploração e tratamento.
 
 Base final
 
 Analise_Final_Tratada.xlsx
-Arquivo exportado ao final do processo de tratamento e análise. Ele representa o resultado do processamento realizado em Python/Pandas. O arquivo final contém informações tratadas e organizadas para facilitar as análises posteriores.
+
+Arquivo exportado ao final do processo de tratamento e análise.
+
+Representa o resultado do processamento realizado em Python/Pandas.
+
+Contém as informações tratadas utilizadas nas análises.
 
 Notebook
 
 analise.ipynb
-Notebook responsável pelas etapas de exploração, tratamento, transformação e análise dos dados com Python e Pandas.
+
+Contém o processo de exploração, tratamento, transformação e análise dos dados.
+
+Registra as principais etapas desenvolvidas com Python e Pandas.
 
 Dashboard final
 
 People_Analytics_Dashboard_Final.html
-Arquivo HTML que representa a etapa final do projeto, reunindo os principais indicadores e análises em uma interface interativa e responsiva.
+
+Representa a etapa final do projeto.
+
+Reúne os principais indicadores e análises.
+
+Possui filtros, gráficos e recursos interativos.
+
+Foi desenvolvido para funcionar em desktop, tablet e smartphone.
 
 🐍 Tecnologias utilizadas
 
@@ -163,21 +183,39 @@ Não informado
 
 Indisponível
 
-Esses casos foram analisados antes de qualquer alteração. A decisão adotada foi preservar os registros e tratar as informações ausentes de maneira adequada para cada análise. Os valores ausentes não foram simplesmente excluídos da base.
+Esses casos foram analisados antes de qualquer alteração.
+
+A decisão adotada foi:
+
+Preservar os registros.
+
+Tratar informações ausentes de acordo com a necessidade de cada análise.
+
+Não excluir automaticamente registros com valores não informados.
 
 🔢 4. Tratamento de variáveis numéricas
 
-Algumas variáveis apresentavam informações numéricas misturadas com textos indicando ausência de informação. Por exemplo:
+Algumas variáveis apresentavam informações numéricas misturadas com textos indicando ausência de informação.
+
+Exemplos:
 
 Idade
 
 Desempenho
 
-Para as análises numéricas, os valores não informados foram tratados como ausentes na camada analítica. Isso permitiu calcular médias e outros indicadores sem transformar valores desconhecidos em números artificiais.
+Para as análises numéricas:
+
+Valores não informados foram tratados como ausentes na camada analítica.
+
+Médias e outros indicadores foram calculados apenas com valores numéricos válidos.
+
+Valores desconhecidos não foram transformados em números artificiais.
 
 📌 5. Criação da variável de avaliação
 
-A partir da variável Desempenho, foi criada uma nova variável chamada Avaliação. Foi utilizado o método apply() do Pandas juntamente com uma função condicional:
+A partir da variável Desempenho, foi criada uma nova variável chamada Avaliação.
+
+Foi utilizado o método apply() do Pandas juntamente com uma função condicional:
 
 def avaliar_desempenho(desempenho):
     if pd.isna(desempenho):
@@ -215,13 +253,17 @@ Não Avaliado
 
 👥 6. Classificação do status
 
-A variável Status foi derivada a partir de Motivo_Desligamento. A regra utilizada foi:
+A variável Status foi derivada a partir de Motivo_Desligamento.
+
+A regra utilizada foi:
 
 Funcionário Ativo → Ativo
 
 Demais motivos → Desligado
 
-Essa transformação permitiu separar os registros entre colaboradores ativos e registros classificados como desligados. A mesma regra foi preservada na camada analítica do dashboard.
+Essa transformação permitiu separar os registros entre colaboradores ativos e registros classificados como desligados.
+
+A mesma regra foi preservada na camada analítica do dashboard.
 
 📊 7. Principais indicadores
 
@@ -271,7 +313,9 @@ Idade média
 
 💰 8. Análise de remuneração
 
-A análise de remuneração buscou compreender a distribuição dos salários entre os colaboradores. Foram observados:
+A análise de remuneração buscou compreender a distribuição dos salários entre os colaboradores.
+
+Foram observados:
 
 Salário mínimo
 
@@ -289,7 +333,7 @@ Essas informações permitem explorar diferenças de remuneração dentro da est
 
 📈 9. Análise de desempenho
 
-A variável Desempenho foi utilizada para analisar o desempenho dos colaboradores. Foram explorados:
+A variável Desempenho foi utilizada para analisar:
 
 Desempenho médio
 
@@ -307,7 +351,7 @@ O objetivo foi identificar padrões nos dados e não estabelecer relações de c
 
 😊 10. Análise de satisfação
 
-A variável Satisfacao foi utilizada para explorar o nível de satisfação dos colaboradores. Foram analisadas possibilidades como:
+A variável Satisfacao foi utilizada para explorar:
 
 Distribuição dos níveis de satisfação
 
@@ -321,7 +365,9 @@ Essas análises são de caráter exploratório e descritivo.
 
 🚪 11. Análise de desligamentos
 
-A partir da variável Motivo_Desligamento, foram identificados os registros classificados como desligados. Os principais motivos encontrados foram:
+A partir da variável Motivo_Desligamento, foram identificados os registros classificados como desligados.
+
+Os principais motivos encontrados foram:
 
 Motivo
 
@@ -359,7 +405,9 @@ Motivo de desligamento × Departamento
 
 ⚠️ Sobre o turnover
 
-Um cuidado importante durante o projeto foi não classificar automaticamente os 35 registros desligados entre os 179 registros da base como uma taxa de turnover. A base não possui informações temporais suficientes, como:
+Um cuidado importante durante o projeto foi não classificar automaticamente os 35 registros desligados entre os 179 registros da base como uma taxa de turnover.
+
+A base não possui informações temporais suficientes, como:
 
 Data de admissão
 
@@ -375,27 +423,45 @@ Por isso, o indicador foi interpretado como o percentual de registros classifica
 
 O projeto também buscou analisar possíveis associações entre variáveis:
 
-Departamento × Desligamento: Permite identificar a concentração de registros desligados entre os departamentos.
+Departamento × Desligamento: permite identificar a concentração de registros desligados entre os departamentos.
 
-Faixa Salarial × Desligamento: Permite observar a distribuição dos registros desligados entre diferentes faixas salariais.
+Faixa Salarial × Desligamento: permite observar a distribuição dos registros desligados entre diferentes faixas salariais.
 
-Satisfação × Desempenho: Permite explorar se existem padrões de associação entre satisfação e desempenho.
+Satisfação × Desempenho: permite explorar possíveis padrões de associação entre satisfação e desempenho.
 
-Avaliação × Desligamento: Permite observar a distribuição dos desligamentos de acordo com a classificação de desempenho.
+Avaliação × Desligamento: permite observar a distribuição dos desligamentos de acordo com a classificação de desempenho.
 
-Nota: Essas análises são descritivas e exploratórias. Uma associação observada entre duas variáveis não significa que uma variável seja responsável pela outra.
+Nota: essas análises são descritivas e exploratórias. Uma associação observada entre duas variáveis não significa que uma variável seja responsável pela outra.
 
 💾 12. Exportação dos dados tratados
 
-Após as etapas de tratamento e análise, os dados foram exportados novamente para Excel. O arquivo gerado foi o Analise_Final_Tratada.xlsx. Esse arquivo representa o resultado final do processamento realizado em Python/Pandas, mantendo a base original intacta.
+Após as etapas de tratamento e análise:
+
+Os dados foram exportados novamente para Excel.
+
+O arquivo gerado foi Analise_Final_Tratada.xlsx.
+
+A base original foi mantida intacta.
 
 🖥️ Dashboard interativo
 
 Após a conclusão da análise e da exportação da base tratada, o projeto avançou para uma etapa de visualização de dados, transformando os resultados em um dashboard web interativo.
 
-O dashboard foi construído a partir dos indicadores e regras definidos durante a análise em Python. A primeira versão da interface foi gerada com apoio do Claude e, posteriormente, passou por diferentes etapas de refinamento com o ChatGPT, preservando os dados, cálculos, metodologia e regras de negócio do projeto.
+A primeira versão da interface foi gerada com apoio do Claude e, posteriormente, passou por diferentes etapas de refinamento com o ChatGPT.
 
-O objetivo dessa etapa foi transformar a análise já realizada em uma interface capaz de facilitar a leitura dos indicadores e permitir diferentes recortes da base.
+Durante todo o processo foram preservados:
+
+Dados originais da análise
+
+Indicadores calculados
+
+Categorias existentes
+
+Regra de classificação de status
+
+Limitações metodológicas
+
+Cuidado para não interpretar associação como causalidade
 
 🧭 Estrutura do dashboard
 
@@ -403,7 +469,7 @@ O dashboard final foi dividido em cinco páginas:
 
 1. Visão Geral
 
-Apresenta os principais KPIs e uma visão resumida da composição da base, incluindo:
+Apresenta:
 
 Total de registros
 
@@ -425,7 +491,7 @@ Avaliação de desempenho
 
 2. Remuneração
 
-Página voltada para a análise salarial, contendo:
+Contém:
 
 Distribuição dos salários
 
@@ -439,7 +505,7 @@ Tabela para consulta dos registros
 
 3. Desempenho
 
-Página dedicada à análise de desempenho:
+Contém:
 
 Distribuição das notas
 
@@ -453,7 +519,7 @@ Consulta dos registros
 
 4. Satisfação
 
-Página utilizada para explorar:
+Permite explorar:
 
 Distribuição dos níveis de satisfação
 
@@ -467,7 +533,7 @@ As relações apresentadas permanecem descritivas e exploratórias, sem afirmaç
 
 5. Desligamentos
 
-Página voltada aos registros classificados como desligados:
+Apresenta:
 
 Motivos de desligamento
 
@@ -481,7 +547,7 @@ Perfil dos registros desligados
 
 📊 Visualizações utilizadas
 
-Foram utilizados diferentes tipos de gráficos de acordo com a finalidade da análise:
+Foram utilizados diferentes tipos de gráficos:
 
 Gráficos de barras horizontais
 
@@ -497,11 +563,11 @@ Dot plots
 
 Tabelas analíticas
 
-A diversificação das visualizações buscou evitar o uso repetitivo de um único formato e facilitar a interpretação de diferentes tipos de informação.
+A diversificação das visualizações buscou facilitar a interpretação de diferentes tipos de informação.
 
 🎛️ Filtros e interatividade
 
-A versão final do dashboard possui recursos de exploração semelhantes aos encontrados em ferramentas de BI:
+A versão final possui recursos semelhantes aos encontrados em ferramentas de BI:
 
 Filtros por departamento
 
@@ -519,7 +585,7 @@ Cross-filter por clique nos gráficos
 
 Chips para visualização dos filtros ativos
 
-Opção para remover filtros individualmente
+Remoção individual de filtros
 
 Alternância entre Quantidade e Percentual
 
@@ -529,15 +595,19 @@ KPIs interativos quando aplicável
 
 Tooltips com informações analíticas
 
-Busca, ordenação e paginação nas tabelas
+Busca nas tabelas
+
+Ordenação das tabelas
+
+Paginação
 
 Atualização dinâmica dos indicadores de acordo com o recorte selecionado
 
+Tratamento para recortes sem registros
+
 📱 Responsividade
 
-O dashboard também foi desenvolvido para funcionar em diferentes tamanhos de tela.
-
-Foram realizados ajustes para:
+O dashboard foi adaptado para:
 
 Desktop
 
@@ -547,9 +617,21 @@ Tablet
 
 Smartphone
 
-No mobile, a navegação lateral passa a funcionar como um menu expansível, os gráficos são reorganizados em uma única coluna quando necessário e as tabelas possuem rolagem horizontal.
+Entre os ajustes realizados:
 
-O objetivo foi manter a legibilidade e a capacidade de interação tanto por clique quanto por toque.
+Sidebar fixa no desktop
+
+Menu lateral expansível no mobile
+
+Topbar adaptada para telas menores
+
+Reorganização automática dos cards
+
+Gráficos adaptados para telas menores
+
+Tabelas com rolagem horizontal
+
+Interações compatíveis com clique e toque
 
 🤖 Uso de IA no desenvolvimento do dashboard
 
@@ -575,32 +657,84 @@ Correção de bugs
               ↓
 Dashboard final
 
-A primeira versão da interface foi gerada com apoio do Claude. O ChatGPT foi utilizado posteriormente para apoiar o processo de revisão técnica e visual, implementação de novas interações, responsividade, validação dos indicadores e correção de problemas identificados durante os testes.
+A primeira versão da interface foi gerada com apoio do Claude.
 
-A utilização dessas ferramentas não substituiu o processo de análise dos dados. A base tratada, os indicadores, as regras de classificação e as limitações metodológicas permaneceram vinculados ao trabalho realizado em Python/Pandas.
+O ChatGPT foi utilizado posteriormente para apoiar:
+
+Revisão técnica
+
+Refinamento visual
+
+Responsividade
+
+Implementação de filtros
+
+Cross-filter
+
+Tooltips
+
+Validação dos indicadores
+
+Correção de bugs
+
+A utilização dessas ferramentas não substituiu o processo de análise dos dados.
+
+A base tratada, os indicadores, as regras de classificação e as limitações metodológicas permaneceram vinculados ao trabalho realizado em Python/Pandas.
 
 <details>
 <summary><strong>📝 Resumo dos prompts utilizados</strong></summary>
 
 1. Construção inicial
 
-Foi solicitada a criação de um dashboard de People Analytics a partir da análise já realizada, preservando os indicadores, categorias e regras de negócio da base tratada.
+Criação de um dashboard de People Analytics.
+
+Uso dos indicadores já calculados.
+
+Preservação das categorias e regras da análise.
 
 2. Redesign visual
 
-A interface foi refinada para um estilo dark profissional, utilizando maior hierarquia visual, diferentes tipos de gráficos e uma estrutura responsiva.
+Interface dark profissional.
+
+Maior hierarquia visual.
+
+Variedade de gráficos.
+
+Melhor responsividade.
 
 3. Interatividade
 
-Foram solicitados recursos como cross-filter, filtros ativos, filtros numéricos, KPIs clicáveis, busca e paginação nas tabelas e alternância entre quantidade e percentual.
+Cross-filter.
+
+Filtros ativos.
+
+Filtros numéricos.
+
+KPIs clicáveis.
+
+Busca e paginação nas tabelas.
+
+Alternância entre quantidade e percentual.
 
 4. Refinamento
 
-Os prompts seguintes focaram na melhoria dos tooltips, valores exatos, experiência mobile e comportamento dos gráficos após aplicação dos filtros.
+Melhoria dos tooltips.
+
+Exibição de valores exatos.
+
+Experiência mobile.
+
+Comportamento dos gráficos após filtros.
 
 5. Correções e validação
 
-A etapa final concentrou-se na validação matemática dos percentuais, preservação dos 179 registros, revisão dos indicadores e correção de bugs específicos dos gráficos de rosca.
+Validação matemática dos percentuais.
+
+Preservação dos 179 registros.
+
+Revisão dos indicadores.
+
+Correção de bugs nos gráficos de rosca.
 
 Os prompts completos foram iterativos e extensos. Por isso, este README registra apenas os objetivos principais de cada etapa.
 
@@ -624,7 +758,17 @@ Desempenho médio ≈ 6,47
 
 Idade média ≈ 41,05 anos
 
-Também foram revisados os percentuais apresentados nos gráficos e o comportamento dos indicadores após aplicação de filtros.
+Também foram revisados:
+
+Percentuais apresentados nos gráficos
+
+Indicadores após aplicação dos filtros
+
+Funcionamento do cross-filter
+
+Comportamento das tabelas
+
+Visualização em diferentes tamanhos de tela
 
 ▶️ Como abrir o dashboard
 
@@ -648,37 +792,37 @@ Limpe os filtros para retornar à visão completa da base.
 
 Durante o desenvolvimento deste projeto, pratiquei conceitos importantes de Python e Pandas, incluindo:
 
-Importação de arquivos: Leitura de arquivos Excel.
+Importação de arquivos: leitura de arquivos Excel.
 
-Manipulação de DataFrames: Criação e alteração de tabelas.
+Manipulação de DataFrames: criação e alteração de tabelas.
 
-Exploração de dados: Uso de head(), info(), shape e columns.
+Exploração de dados: uso de head(), info(), shape e columns.
 
-Identificação de ausentes: Localização de valores nulos ou vazios.
+Identificação de ausentes: localização de valores nulos ou vazios.
 
-Tratamento de dados: Limpeza e conversão de tipos de dados.
+Tratamento de dados: limpeza e conversão de tipos de dados.
 
-Novas variáveis: Criação de colunas e uso do método apply().
+Novas variáveis: criação de colunas e uso do método apply().
 
-Lógica condicional: Aplicação de regras de negócio em funções.
+Lógica condicional: aplicação de regras de negócio em funções.
 
-Agrupamento de dados: Agregações e resumos estatísticos.
+Agrupamento de dados: agregações e resumos estatísticos.
 
-Análise exploratória: Investigação e cruzamento de variáveis.
+Análise exploratória: investigação e cruzamento de variáveis.
 
-Exportação de dados: Gravação de DataFrames de volta para Excel.
+Exportação de dados: gravação de DataFrames de volta para Excel.
 
-Interpretação de indicadores: Leitura crítica dos resultados obtidos.
+Interpretação de indicadores: leitura crítica dos resultados obtidos.
 
-Visualização de dados: Escolha de gráficos de acordo com o tipo de análise.
+Visualização de dados: escolha de gráficos de acordo com o tipo de análise.
 
-Interatividade: Uso de filtros e cross-filter para exploração dos dados.
+Interatividade: uso de filtros e cross-filter para exploração dos dados.
 
-Validação: Conferência de cálculos e percentuais após aplicação dos filtros.
+Validação: conferência de cálculos e percentuais após aplicação dos filtros.
 
-Responsividade: Adaptação de uma interface analítica para diferentes dispositivos.
+Responsividade: adaptação de uma interface analítica para diferentes dispositivos.
 
-Uso de IA: Utilização de ferramentas generativas como apoio técnico, mantendo a validação dos dados e resultados.
+Uso de IA: utilização de ferramentas generativas como apoio técnico, mantendo a validação dos dados e resultados.
 
 Além dos conhecimentos técnicos, o projeto ajudou a desenvolver uma visão analítica voltada para People Analytics, focando em quais perguntas de negócio podem ser respondidas através dos dados de Gente & Gestão e em como apresentar essas respostas de maneira visual.
 
@@ -686,17 +830,17 @@ Além dos conhecimentos técnicos, o projeto ajudou a desenvolver uma visão ana
 
 Durante a análise, foram identificadas as seguintes limitações na base de dados:
 
-Ausência de ID único: A base não possui matrícula. Nomes repetidos não foram tratados automaticamente como duplicatas.
+Ausência de ID único: a base não possui matrícula. Nomes repetidos não foram tratados automaticamente como duplicatas.
 
-Sem dados temporais: Ausência de datas de admissão e desligamento, impedindo o cálculo da taxa temporal de turnover.
+Sem dados temporais: ausência de datas de admissão e desligamento, impedindo o cálculo da taxa temporal de turnover.
 
-Valores ausentes: Algumas variáveis possuem campos não preenchidos, que precisaram ser preservados na análise.
+Valores ausentes: algumas variáveis possuem campos não preenchidos, que precisaram ser preservados na análise.
 
-Falta de histórico: Os dados representam um retrato estático, sem histórico de movimentações dos colaboradores no tempo.
+Falta de histórico: os dados representam um retrato estático, sem histórico de movimentações dos colaboradores no tempo.
 
-Associação não implica causalidade: As relações entre variáveis apresentadas no projeto possuem caráter exploratório.
+Associação não implica causalidade: as relações entre variáveis apresentadas no projeto possuem caráter exploratório.
 
-Escopo acadêmico: A base de dados foi utilizada estritamente para fins de estudo e desenvolvimento técnico.
+Escopo acadêmico: a base de dados foi utilizada estritamente para fins de estudo e desenvolvimento técnico.
 
 📂 Estrutura do projeto
 
@@ -730,7 +874,9 @@ data/
 
 🚀 Próximos passos
 
-O dashboard planejado inicialmente como próxima etapa foi concluído. Com isso, o fluxo principal deste projeto está encerrado.
+O dashboard planejado inicialmente como próxima etapa foi concluído.
+
+Com isso, o fluxo principal deste projeto está encerrado.
 
 Como possíveis evoluções futuras, uma base com mais informações permitiria desenvolver análises como:
 
