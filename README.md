@@ -575,19 +575,9 @@ Também foram revisados:
 - Comportamento das tabelas
 - Visualização em diferentes tamanhos de tela
 
-### ▶️ Como abrir o dashboard
+## 🌐 Dashboard Interativo
 
-O arquivo final é:
-
-`People_Analytics_Dashboard_Final.html`
-
-Para visualizar:
-
-1. Baixe o arquivo HTML.
-2. Abra-o em um navegador moderno, como Chrome, Edge ou Firefox.
-3. Mantenha conexão com a internet, pois o dashboard utiliza recursos externos como Plotly.js e a fonte Inter.
-4. Utilize os filtros ou clique nos gráficos para explorar diferentes recortes dos dados.
-5. Limpe os filtros para retornar à visão completa da base.
+🔗 **[Acessar Dashboard de People Analytics](https://ayrton-marquezin-venancio.github.io/people-analytics-pandas/)**
 
 ---
 
